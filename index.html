@@ -4,10 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BELDA — Visual</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- La scène : tout le visuel vit ici, dans un cadre 16:9 -->
   <div class="stage">
     <!-- Le tunnel d'étoiles est tout au fond (indépendant du logo et du DJ).
@@ -15,16 +14,16 @@
          qui est peint par-dessus juste après (vraie sensation de profondeur). -->
     <canvas id="starfield-canvas"></canvas>
     <canvas id="logo3d-canvas"></canvas>
-    <!-- Les halos sont peints AVANT le DJ : sa silhouette (opaque) les
-         recouvre là où ils tombent sur son corps, donc le halo n'est
-         visible qu'autour de lui, jamais posé sur son visage/corps. -->
+
+    <!-- Les halos sont peints AVANT le DJ -->
     <div class="halo halo-main"></div>
     <div class="halo halo-head"></div>
-    <img class="dj-silhouette" src="assets/dj_silhouette.png" alt="">
-    <!-- Visage IA : posé par-dessus la photo du DJ, pile à l'emplacement
-         de son visage — fait uniquement de lignes/particules (voir
-         js/face3d.js), sans toucher au reste de la composition. -->
+
+    <img class="dj-silhouette" src="dj_silhouette.png" alt="">
+
+    <!-- Visage IA -->
     <canvas id="face3d-canvas"></canvas>
+
     <div class="dj-fade-bottom"></div>
     <div class="mist mist-1"></div>
     <div class="mist mist-2"></div>
@@ -32,13 +31,7 @@
     <div class="vignette"></div>
     <div class="grain"></div>
 
-    <!-- "DJ BELDA" reste affiché en permanence, du début à la fin —
-         indépendant du bloc ci-dessous qui alterne BELDA / OASIS / FERIA.
-         Trois calques imbriqués : le premier (intro) ne joue qu'UNE fois
-         au démarrage (fondu + légère montée), le second (drift) boucle en
-         permanence un tout petit déplacement horizontal, et c'est le texte
-         lui-même qui respire (glow). Les séparer évite que ces animations
-         ne se marchent dessus. -->
+    <!-- DJ BELDA -->
     <div class="dj-belda-tag">
       <div class="dj-belda-intro">
         <div class="dj-belda-drift">
@@ -52,17 +45,14 @@
       <div class="name-line2"></div>
     </div>
 
-    <!-- Deuxième logo : la casquette complète telle quelle (couleurs,
-         texte "BELDA", badge "Tn Air"), juste avec le fond noir retiré
-         (voir assets/belda_cap_logo.png), posée dans le coin en haut à
-         droite. -->
-    <img class="cap-outline-logo" src="assets/belda_cap_logo.png" alt="">
+    <!-- Logo casquette -->
+    <img class="cap-outline-logo" src="belda_cap_logo.png" alt="">
   </div>
 
-  <script src="vendor/three.min.js"></script>
-  <script src="js/starfield.js"></script>
-  <script src="js/logo3d.js"></script>
-  <script src="js/face3d.js"></script>
-  <script src="js/timeline.js"></script>
+  <script src="three.min.js"></script>
+  <script src="starfield.js"></script>
+  <script src="logo3d.js"></script>
+  <script src="face3d.js"></script>
+  <script src="timeline.js"></script>
 </body>
 </html>
